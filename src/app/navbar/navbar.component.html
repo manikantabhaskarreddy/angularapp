@@ -1,0 +1,31 @@
+<form [formGroup]="mainform">
+    <input type="text" id="name" placeholder="Enter  your name" formControlName="name">
+    <input type="text" id="branch" placeholder="Enter  your Branch" formControlName="branch">
+    <input type="text" id="email" placeholder="Enter  your email" formControlName="email">
+    <!-- <input type="password" id="password" placeholder="Enter  your password" formControlName="password"> -->
+    <button (click)="postdata()">Submit</button>
+</form>
+<table border="3">
+    <thead>
+        <!-- <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>email</th>
+            <th>password</th>
+            <th>action</th>
+        </tr> -->
+    </thead>
+    <tbody>
+        <tr *ngFor="let r of records">
+            <td>{{r.id}}</td>
+            <td>{{r.name}}</td>
+            <td>{{r.branch}}</td>
+            <td>{{r.email}}</td>
+            <!-- <td>{{r.password}}</td> -->
+            <td>
+                <button class="btn btn-outline-primary" (click)="updateuser()">Update</button>
+                <button class="btn btn-outline-danger" (click)="deleteuser(r.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
